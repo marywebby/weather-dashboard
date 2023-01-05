@@ -1,0 +1,45 @@
+.container-info {
+    background-color: #76c68df5;
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+}
+
+.container-cards {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    background-color: #76c68df5;
+}
+
+.header {
+    font-size: 50px;
+    padding: 20px;
+    text-align: center;
+    background-color: #25733bf5;
+    color: white; 
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 25%;
+    background-color: rgb(63, 130, 106);
+    color: white;
+}
+
+.right {
+    width: 75%;
+}
+
+.card {
+    background-color: rgb(26, 78, 52);
+    color: rgb(102, 169, 130);
+}
+
+ul {
+    text-align: center;
+
+}

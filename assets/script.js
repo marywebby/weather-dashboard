@@ -1,15 +1,29 @@
-const apiKey = "https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid=d4d47f02cada0dd2afaf7aee439b9c40"
-const inputVal = input.val
-const url = "https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid=d4d47f02cada0dd2afaf7aee439b9c40"
+let apiKey = `d4d47f02cada0dd2afaf7aee439b9c40`
+let searchInput = document.querySelector("#search-input")
+let searchButton = document.querySelector("#search-button")
 
-// fetch(url)
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log 
-//   })
-//   .catch(() => {
-//     msg.textContent = "Please search for a valid city ";
-//   });
+// consol logging the city name typed in 
+// fetching data from API when searching for a city 
+searchButton.addEventListener("click", function (event) {
+    let cityName = searchInput.value
+    console.log(cityName)
+    event.preventDefault()
+
+    let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`
+        fetch(url)
+            .then(function (response) {
+                 return response.json()
+             }) 
+            .then (function (data) {
+                    console.log(data);
+             });
+        });
+
+
+// data.list[0].main.temp
+
+
+// function searchCity ()
 
 
 // function to add previous city names to previous cities ul and display 
@@ -31,4 +45,5 @@ const url = "https://api.openweathermap.org/data/2.5/forecast?q={city name}&appi
 
 
 
+// knowing which time to pick for more accurate data 
 

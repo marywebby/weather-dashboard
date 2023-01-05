@@ -34,12 +34,18 @@
     width: 75%;
 }
 
-.card {
+.card-1, .card-2, .card-3, .card-4, .card-5 {
     background-color: rgb(26, 78, 52);
     color: rgb(102, 169, 130);
+    /* justify-content: space-between(10px); */
 }
 
 ul {
     text-align: center;
 
+}
+
+.container-cards {
+    display: flex;
+    justify-content: space-between;
 }

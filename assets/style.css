@@ -49,3 +49,14 @@ ul {
     display: flex;
     justify-content: space-between;
 }
+
+ul {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+li {
+    list-style: none;
+}
+

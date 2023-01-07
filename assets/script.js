@@ -36,6 +36,7 @@ function displayForcast (weatherArray) {
         cardDiv.setAttribute("style", "width:18rem")
         var cardBody = document.createElement("div")
         cardBody.setAttribute("class", "card-body")
+        p
         cardDiv.appendChild(cardBody)
         document.querySelector(".container-cards").appendChild(cardDiv)
     }

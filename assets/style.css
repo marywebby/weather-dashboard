@@ -65,3 +65,6 @@ li {
     color: white;
 }
 
+.hide {
+    display: none;
+}

@@ -60,3 +60,8 @@ li {
     list-style: none;
 }
 
+.previous-cities-list {
+    padding: 15px;
+    color: white;
+}
+

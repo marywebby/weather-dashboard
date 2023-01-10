@@ -9,11 +9,10 @@ searchButton.addEventListener("click", function (event) {
     console.log(cityName)
     event.preventDefault()
 
-    var ulCitiesList = document.createElement("ul")
-    ulCitiesList.textContent = cityName
-    document.querySelector(".previous-cities-list").appendChild(ulCitiesList)
-    localStorage.setItem(cityName, ulCitiesList)
-
+    // var ulCitiesList = document.createElement("button")
+    // ulCitiesList.textContent = cityName
+    // document.querySelector(".previous-cities-list").appendChild(ulCitiesList)
+    // localStorage.setItem(cityName, ulCitiesList)
 
 
     let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=imperial&appid=${apiKey}`
@@ -31,20 +30,30 @@ searchButton.addEventListener("click", function (event) {
                     cardArray.push(data.list[i])
                 }
             }
-            displayForcast(cardArray, city)
+            displayForcast(cardArray, city, data)
             var weather = data.list[0]
             var currentData = { temp: weather.main.temp, wind: weather.wind.speed, humidity: weather.main.humidity, name:data.city.name}
             displayCurrentWeather(currentData)
         });
 });
 
+function createButton () { 
+    var ulCitiesList = document.createElement("button")
+    ulCitiesList.textContent = cityName
+    document.querySelector(".previous-cities-list").appendChild(ulCitiesList)
+    localStorage.setItem(cityName, ulCitiesList)
+}
 // trying to print local storage here, have items already set but need to grab and print on page when reloaded
 // $(".previous-cities-list").val(localStorage.getItem(cityName));
 
-function displayForcast (weatherArray, cityName) {
+function displayForcast (weatherArray, cityName, data) {
     console.log(weatherArray)
     document.querySelector(".container-cards").innerHTML = ""
     for (var i = 0 ; i < weatherArray.length ; i ++) {
+        var weatherList = data.list
+        console.log("weatherIcon", weatherList[i].weather[0])
+        var cardIcon = document.createElement("img")
+        cardIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + weatherList[i].weather[0].icon + "@2x.png")
         var cardDiv = document.createElement("div")
         cardDiv.setAttribute("class", "card")
         cardDiv.setAttribute("style", "width:18rem")
@@ -53,8 +62,6 @@ function displayForcast (weatherArray, cityName) {
         var ulCard = document.createElement("ul")
         ulCard.setAttribute("class", "ulCard")
         // ul card attribute for name, temp, wind, and humidity
-
-     
 
         // card name
         var liCardName = document.createElement("li")
@@ -75,7 +82,7 @@ function displayForcast (weatherArray, cityName) {
         // appending the card container 
         cardDiv.appendChild(cardBody)
         cardBody.appendChild(ulCard)
-        ulCard.append(liCardName, liCardTemp, liCardWind, liCardHumidity)
+        ulCard.append(cardIcon, liCardName, liCardTemp, liCardWind, liCardHumidity)
         document.querySelector(".container-cards").appendChild(cardDiv)
     }
 }

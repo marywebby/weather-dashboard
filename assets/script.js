@@ -21,6 +21,8 @@ if (cityName === "" || cityName === undefined || cityName === null) {
     }, 1500)
     return ;
 }
+document.querySelector(".right").classList.remove("hide")
+
 
 let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=imperial&appid=${apiKey}`
 fetch(url)

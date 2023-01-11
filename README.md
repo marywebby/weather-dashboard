@@ -24,3 +24,5 @@ You can also click on any previous searches you have inputted for easy access!
 and finally once you have decided on the city you will be presented with the current forcast, and the forcast for the following 5 days! 
 ![Screen Shot 2023-01-10 at 10 49 25 PM](https://user-images.githubusercontent.com/118230483/211714005-48970903-23d3-47b8-bf68-1927b3cea547.png)
 
+DEPLOYED APPLICATION 
+https://marywebby.github.io/weather-dashboard/
